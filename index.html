@@ -114,7 +114,7 @@
       gap: 2.5rem;
     }
     .hero-summary {
-      font-size: 1.05rem; font-weight: 300;
+      font-size: 1.18rem; font-weight: 300;
       line-height: 1.85;
       color: var(--mid);
     }
@@ -143,7 +143,7 @@
       margin-bottom: 4rem;
     }
     .section-tag {
-      font-size: 0.68rem; font-weight: 600;
+      font-size: 0.93rem; font-weight: 600;
       letter-spacing: 0.22em; text-transform: uppercase;
       color: var(--muted);
       padding-top: 0.3rem;
@@ -159,7 +159,7 @@
 
     /* ── ABOUT ── */
     .about-text p {
-      font-size: 0.95rem; color: var(--mid);
+      font-size: 1.08rem; color: var(--black);
       line-height: 1.85; margin-bottom: 1.2rem;
       font-weight: 300;
     }
@@ -191,16 +191,43 @@
     }
     .exp-title {
       font-size: 1.1rem; font-weight: 600;
-      color: var(--black); margin-bottom: 0.15rem;
+      color: var(--black); margin-bottom: 0.05rem;
     }
     .exp-org {
       font-size: 0.82rem; color: var(--muted);
-      margin-bottom: 1rem; font-style: italic;
+      margin-bottom: 0.8rem; font-style: italic;
     }
-    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+
+    /* LinkedIn-style sub-role timeline */
+    .exp-subroles { position: relative; padding-left: 1.4rem; margin-top: 0.4rem; }
+    .exp-subroles::before {
+      content: '';
+      position: absolute; left: 5px; top: 8px; bottom: 8px;
+      width: 1px; background: var(--rule);
+    }
+    .exp-subrole-item { position: relative; margin-bottom: 1.4rem; }
+    .exp-subrole-item:last-child { margin-bottom: 0; }
+    .exp-subrole-item::before {
+      content: '';
+      position: absolute; left: -1.4rem; top: 6px;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--muted);
+      border: 2px solid var(--bg);
+      outline: 1px solid var(--muted);
+    }
+    .exp-subrole {
+      font-size: 0.92rem; font-weight: 600;
+      color: var(--black); margin-bottom: 0.1rem;
+    }
+    .exp-subdate {
+      font-size: 0.75rem; color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
     .exp-bullets li {
-      font-size: 0.88rem; color: var(--mid);
-      padding-left: 1.2rem; position: relative;
+      font-size: 0.85rem; color: var(--black);
+      padding-left: 1.1rem; position: relative;
       font-weight: 300; line-height: 1.7;
     }
     .exp-bullets li::before {
@@ -208,22 +235,19 @@
     }
 
     /* ── EDUCATION ── */
-    .edu-list { display: flex; flex-direction: column; gap: 0; margin-top: 4rem; border-top: 1px solid var(--rule); }
-    .edu-item {
-      display: grid; grid-template-columns: 200px 1fr; gap: 4rem;
-      padding: 1.8rem 0; border-bottom: 1px solid var(--rule);
-      align-items: baseline;
-    }
+    .edu-list { display: flex; flex-direction: column; gap: 3rem; margin-top: 3rem; }
+    .edu-item { display: grid; grid-template-columns: 200px 1fr; gap: 4rem; }
     .edu-year {
       font-size: 0.72rem; font-weight: 600;
       letter-spacing: 0.12em; color: var(--muted);
+      padding-top: 0.2rem;
     }
     .edu-degree {
-      font-size: 0.95rem; font-weight: 600; color: var(--black);
-      margin-bottom: 0.2rem;
+      font-size: 1.05rem; font-weight: 600; color: var(--black);
+      margin-bottom: 0.05rem;
     }
-    .edu-school { font-size: 0.82rem; color: var(--muted); }
-    .edu-thesis { font-size: 0.78rem; color: var(--muted); margin-top: 0.4rem; font-style: italic; font-weight: 300; }
+    .edu-school { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.8rem; font-style: italic; }
+    .edu-thesis { font-size: 0.8rem; color: var(--muted); margin-top: 0.3rem; font-style: italic; font-weight: 300; }
 
     /* ── PUBLICATIONS ── */
     .pub-intro {
@@ -424,37 +448,60 @@
       <h2 class="section-title">Career & training</h2>
     </div>
     <div class="exp-list fade-in">
+
+      <!-- PRINCETON -->
       <div class="exp-item">
-        <div class="exp-date">Sep 2025 – Present</div>
+        <div class="exp-date">Jan 2024 – Present</div>
         <div>
-          <div class="exp-title">Associate Research Scholar</div>
-          <div class="exp-org">Princeton University, Princeton NJ · PI: Prof. Jose B. Roque</div>
-          <ul class="exp-bullets">
-            <li>Leads active collaboration with Bristol Myers Squibb through the Princeton Catalysis Initiative, transitioning metallophotoredox methodologies into industrial-ready protocols.</li>
-            <li>Manages research teams of postdoctoral scientists, graduate and undergraduate students across new programs in metalloradical studies, metallophotoredox catalysis, and positional editing.</li>
-            <li>Standardized rigorous glovebox and Schlenk protocols for air- and moisture-sensitive chemistry.</li>
-          </ul>
+          <div class="exp-title">Princeton University</div>
+          <div class="exp-org">Princeton, NJ · Research Group of Prof. Jose B. Roque</div>
+          <div class="exp-subroles">
+
+            <div class="exp-subrole-item">
+              <div class="exp-subrole">Associate Research Scholar</div>
+              <div class="exp-subdate">Sep 2025 – Present · Princeton Catalysis Initiative</div>
+              <ul class="exp-bullets">
+                <li>Leads active collaboration with Bristol Myers Squibb, transitioning metallophotoredox methodologies into industrial-ready protocols.</li>
+                <li>Manages multidisciplinary research teams across programs in metalloradical studies, metallophotoredox catalysis, and positional editing.</li>
+                <li>Standardized rigorous glovebox and Schlenk protocols for air- and moisture-sensitive chemistry.</li>
+              </ul>
+            </div>
+
+            <div class="exp-subrole-item">
+              <div class="exp-subrole">Postdoctoral Associate</div>
+              <div class="exp-subdate">Jan 2024 – Aug 2025</div>
+              <ul class="exp-bullets">
+                <li>Initiated nickel-catalyzed migratory arylation programs for aliphatic amines and alcohols in collaboration with BMS medicinal chemists.</li>
+                <li>Developed and led metalloradical and metallophotoredox catalysis programs from the ground up.</li>
+              </ul>
+            </div>
+
+          </div>
         </div>
       </div>
-      <div class="exp-item">
-        <div class="exp-date">Jan 2024 – Aug 2025</div>
-        <div>
-          <div class="exp-title">Postdoctoral Associate</div>
-          <div class="exp-org">Princeton University, Princeton NJ · PI: Prof. Jose B. Roque</div>
-        </div>
-      </div>
+
+      <!-- ROCHESTER -->
       <div class="exp-item">
         <div class="exp-date">Jan 2020 – Dec 2023</div>
         <div>
-          <div class="exp-title">Postdoctoral Associate</div>
-          <div class="exp-org">University of Rochester, Rochester NY · PI: Prof. C. Rose Kennedy</div>
-          <ul class="exp-bullets">
-            <li>Led interdisciplinary collaboration with the McCamant lab using spectroscopic and mechanistic studies to identify catalyst deactivation pathways and establish photophysical characterization of bimetallic systems.</li>
-            <li>Managed ground-up setup of a new research laboratory including equipment procurement and installation.</li>
-            <li>Served as safety officer and primary liaison between Environmental Health & Safety and the Kennedy lab.</li>
-          </ul>
+          <div class="exp-title">University of Rochester</div>
+          <div class="exp-org">Rochester, NY · Research Group of Prof. C. Rose Kennedy</div>
+          <div class="exp-subroles">
+
+            <div class="exp-subrole-item">
+              <div class="exp-subrole">Postdoctoral Associate</div>
+              <div class="exp-subdate">Jan 2020 – Dec 2023</div>
+              <ul class="exp-bullets">
+                <li>Led interdisciplinary collaboration with the McCamant lab using spectroscopic and mechanistic studies to identify catalyst deactivation pathways and establish photophysical characterization of bimetallic systems.</li>
+                <li>Managed ground-up setup of a new research laboratory including equipment procurement and installation.</li>
+                <li>Served as safety officer and primary liaison between Environmental Health & Safety and the Kennedy lab.</li>
+              </ul>
+            </div>
+
+          </div>
         </div>
       </div>
+
     </div>
 
     <!-- EDUCATION -->
@@ -464,29 +511,46 @@
         <h2 class="section-title">Academic background</h2>
       </div>
       <div class="edu-list">
+
+        <!-- Iowa State -->
         <div class="edu-item">
-          <div class="edu-year">2019</div>
+          <div class="edu-year">2014 – 2019</div>
           <div>
-            <div class="edu-degree">Ph.D. in Organic Chemistry</div>
-            <div class="edu-school">Iowa State University, Ames IA · PI: Prof. Levi M. Stanley</div>
-            <div class="edu-thesis">Catalytic Methods for Alkene Functionalization Reactions</div>
+            <div class="edu-degree">Iowa State University</div>
+            <div class="edu-school">Ames, IA · Research Group of Prof. Levi M. Stanley</div>
+            <div class="exp-subroles">
+
+              <div class="exp-subrole-item">
+                <div class="exp-subrole">Ph.D. in Organic Chemistry</div>
+                <div class="exp-subdate">2017 – 2019</div>
+                <div class="edu-thesis">Thesis: Catalytic Methods for Alkene Functionalization Reactions</div>
+              </div>
+
+              <div class="exp-subrole-item">
+                <div class="exp-subrole">M.S. in Organic Chemistry</div>
+                <div class="exp-subdate">2014 – 2017</div>
+                <div class="edu-thesis">Thesis: Enantioselective synthesis of compounds containing bis-benzylic quaternary stereocenters through palladium-catalyzed conjugate additions of arylboronic acids</div>
+              </div>
+
+            </div>
           </div>
         </div>
+
+        <!-- ICT -->
         <div class="edu-item">
-          <div class="edu-year">2017</div>
+          <div class="edu-year">2009 – 2013</div>
           <div>
-            <div class="edu-degree">M.S. in Organic Chemistry</div>
-            <div class="edu-school">Iowa State University, Ames IA · Advisor: Prof. Levi M. Stanley</div>
-            <div class="edu-thesis">Enantioselective synthesis of compounds containing bis-benzylic quaternary stereocenters through palladium-catalyzed conjugate additions of arylboronic acids</div>
+            <div class="edu-degree">Institute of Chemical Technology</div>
+            <div class="edu-school">Mumbai, India</div>
+            <div class="exp-subroles">
+              <div class="exp-subrole-item">
+                <div class="exp-subrole">B.Tech. in Pharmaceutical Sciences & Technology</div>
+                <div class="exp-subdate">2009 – 2013</div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="edu-item">
-          <div class="edu-year">2013</div>
-          <div>
-            <div class="edu-degree">B.Tech. in Pharmaceutical Sciences & Technology</div>
-            <div class="edu-school">Institute of Chemical Technology, Mumbai, India</div>
-          </div>
-        </div>
+
       </div>
     </div>
   </div>
@@ -512,7 +576,7 @@
             <div>
               <div class="pub-title">Catalyst Deactivation Modes in Nickel-Mediated Suzuki–Miyaura Cross-Coupling Reactions Using an NHC-Pyridonate Ligand</div>
               <div class="pub-authors">Kadam, A. A.; †Afandiyeva, M.; †Brennessel, W. W.; Kennedy, C. R.*</div>
-              <div class="pub-journal">Organometallics, 2024, ASAP <a href="https://doi.org/10.1021/acs.organomet.4c00235" target="_blank" class="pub-doi">DOI →</a></div>
+              <div class="pub-journal">Organometallics, 2024, 43, 2574–2580 <a href="https://doi.org/10.1021/acs.organomet.4c00235" target="_blank" class="pub-doi">DOI →</a></div>
             </div>
           </div>
           <div class="pub-item">
@@ -581,15 +645,19 @@
             </div>
           </div>
 
-          <div class="prep-section-label">Manuscripts in preparation</div>
+          <div class="prep-section-label">Submitted</div>
 
           <div class="pub-item pub-inprep">
-            <div class="pub-year">—</div>
+            <div class="pub-year">2026</div>
             <div>
               <div class="pub-title">Store-and-Release Strategy Enables Nickel-Catalyzed Migratory Arylations of Aliphatic Amines</div>
               <div class="pub-authors">Kadam, A. A.; †Lee, K.; †Knyazev, A.; Liao, Y.; Lourenço, J.; Cauley, A. N.; Dones, J. M.; Oderinde, M.; Kempson, J.; Roque, J. B.*</div>
+              <div class="pub-journal"><em>Submitted</em> &nbsp;·&nbsp; <a href="https://doi.org/10.26434/chemrxiv.15003452/v1" target="_blank" class="pub-doi">ChemRxiv Preprint →</a></div>
             </div>
           </div>
+
+          <div class="prep-section-label">Manuscripts in Preparation</div>
+
           <div class="pub-item pub-inprep">
             <div class="pub-year">—</div>
             <div>
@@ -611,6 +679,40 @@
               <div class="pub-authors">Kadam, A. A.; †Mitiku, H. A.; Cai, L.; Reagen, R. S.; Brennessel, W. W.; McCamant, D. W.; Kennedy, C. R.*</div>
             </div>
           </div>
+          <div class="pub-item pub-inprep">
+            <div class="pub-year">—</div>
+            <div>
+              <div class="pub-title">Metal-metal and Metal-ligand Cooperativity by Dimeric Iminopyridonate Ni(I) Enables C(sp²)–C(sp³) Cross-Couplings</div>
+              <div class="pub-authors">Mitiku, H. A.; George, G. M.; Kadam, A. A.; Brennessel, W. W.; McCamant, D. W.; Kennedy, C. R.*</div>
+            </div>
+          </div>
+
+          <div class="prep-section-label">ChemRxiv Preprints</div>
+
+          <div class="pub-item pub-inprep">
+            <div class="pub-year">2024</div>
+            <div>
+              <div class="pub-title">Catalyst Deactivation Modes in Nickel-Mediated Suzuki–Miyaura Cross-Coupling Reactions Using an NHC-Pyridonate Ligand</div>
+              <div class="pub-authors">Kadam, A. A.; †Afandiyeva, M.; †Brennessel, W. W.; Kennedy, C. R.*</div>
+              <div class="pub-journal">ChemRxiv, 2024 &nbsp;·&nbsp; <a href="https://doi.org/10.26434/chemrxiv-2024-3xd1k" target="_blank" class="pub-doi">Preprint →</a> &nbsp;·&nbsp; <span style="font-style:normal;font-size:0.72rem;color:var(--muted);">Published in <em>Organometallics</em> 2024, 43, 2574</span></div>
+            </div>
+          </div>
+          <div class="pub-item pub-inprep">
+            <div class="pub-year">2023</div>
+            <div>
+              <div class="pub-title">Secondary-Sphere Preorganization by an NHC-Pyridonate Ligand Enables Nickel-Catalyzed Hydroboration of Nitriles</div>
+              <div class="pub-authors">Afandiyeva, M.;† Wu, X.;† Brennessel, W. W.; Kadam, A. A.; Kennedy, C. R.*</div>
+              <div class="pub-journal">ChemRxiv, 2023 &nbsp;·&nbsp; <a href="https://doi.org/10.26434/chemrxiv-2023-ks784" target="_blank" class="pub-doi">Preprint →</a> &nbsp;·&nbsp; <span style="font-style:normal;font-size:0.72rem;color:var(--muted);">Published in <em>Chem. Commun.</em> 2023, 59, 13450</span></div>
+            </div>
+          </div>
+          <div class="pub-item pub-inprep">
+            <div class="pub-year">2022</div>
+            <div>
+              <div class="pub-title">Synthesis, Structure, and Hydroboration Reactivity of Anionic Nickel(0) Complexes Supported by Bidentate NHC-Pyridone Ligands</div>
+              <div class="pub-authors">Kadam, A. A.;† Afandiyeva, M.;† Wu, X.;† Brennessel, W. W.; Kennedy, C. R.*</div>
+              <div class="pub-journal">ChemRxiv, 2022 &nbsp;·&nbsp; <a href="https://doi.org/10.26434/chemrxiv-2022-gk2cs" target="_blank" class="pub-doi">Preprint →</a> &nbsp;·&nbsp; <span style="font-style:normal;font-size:0.72rem;color:var(--muted);">Published in <em>Organometallics</em> 2022, 41, 3014</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -622,7 +724,7 @@
   <div class="container">
     <div class="section-header fade-in">
       <div class="section-tag">Awards</div>
-      <h2 class="section-title">Recognitionv& honors</h2>
+      <h2 class="section-title">Recognition & honors</h2>
     </div>
     <div class="section-body fade-in">
       <div></div>
